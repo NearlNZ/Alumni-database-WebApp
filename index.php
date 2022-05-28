@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Alumni Club</title>
+        <title>หน้าหลัก : Alumni Club</title>
         
         <!-- Include Fonts / Icons -->
         <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -18,14 +18,20 @@
             body {
                 font-family: "Kanit";
             }
+            #text-truncate-2 {   
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
             #text-truncate-3 {   
                 -webkit-line-clamp: 3;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
-            #text-truncate-2 {   
-                -webkit-line-clamp: 2;
+            #text-truncate-5 {   
+                -webkit-line-clamp: 5;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
@@ -83,7 +89,7 @@
                         </button>
                     </div>
                     <!-- Annoucements card -->
-                    <div class="p-2">
+                    <div class="p-2 mt-2">
                         <div class="card">
                             <div class="card-header bg-dark text-light">
                                 <div class="mb-2 mt-2 ms-2">
@@ -207,7 +213,7 @@
                     <!-- End Static Banner -->
 
                     <!-- Activities card -->
-                    <div class="p-2">
+                    <div class="p-2 mb-2">
                         <div class="card">
                             <div class="card-header bg-dark text-light">
                                 <div class="mb-2 mt-2 ms-2">
@@ -221,8 +227,8 @@
                                         <a class="card shadow-sm h-100 text-decoration-none" href="404.php">
                                             <img src="resource/pics/activities-card.jpeg" class="card-img-top">
                                             <div id="annoucement-card" class="card-body">
-                                                <h5 class="card-title mt-3"><i class="fa-solid fa-star me-2 text-warning"></i>ตัวอย่างกิจรรมที่กำลังจะถึง</h5>
-                                                <p class="card-text text-dark" id="text-truncate-3">
+                                                <h2 class="card-title mt-3 text-warning"><i class="fa-solid fa-star me-2"></i>28 มิ.ย.</h2>
+                                                <p class="card-text text-dark" id="text-truncate-5">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
                                                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -241,10 +247,9 @@
                                             </div>
                                             <ul class="list-group list-group-flush p-2">
                                                 <a class="list-group-item" href="404.php">
-                                                    <div>
+                                                    <div class="h4">
                                                         <i class="fa-solid fa-star me-1 text-warning"></i> 
-                                                        <span class="text-warning me-4">30 มิถุนายน</span>
-                                                        
+                                                        <span class="text-warning me-4">30 มิ.ย</span>
                                                     </div>
                                                     <p class="card-text text-dark" id="text-truncate-2">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -256,10 +261,9 @@
                                                     </p>
                                                 </a>
                                                 <a class="list-group-item" href="404.php">
-                                                    <div>
+                                                    <div class="h4">
                                                         <i class="fa-solid fa-star me-1 text-warning"></i> 
-                                                        <span class="text-warning me-4">10 กรกฎาคม</span>
-                                                        
+                                                        <span class="text-warning me-4">10 ก.ค.</span> 
                                                     </div>
                                                     <p class="card-text text-dark" id="text-truncate-2">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -271,10 +275,9 @@
                                                     </p>
                                                 </a>
                                                 <a class="list-group-item" href="404.php">
-                                                    <div>
+                                                    <div class="h4">
                                                         <i class="fa-solid fa-star me-1 text-warning"></i> 
-                                                        <span class="text-warning me-4">12 สิงหาคม</span>
-                                                        
+                                                        <span class="text-warning me-4">12 ส.ค.</span>
                                                     </div>
                                                     <p class="card-text text-dark" id="text-truncate-2">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -286,10 +289,9 @@
                                                     </p>
                                                 </a>
                                                 <a class="list-group-item" href="404.php">
-                                                    <div>
+                                                    <div div class="h4">
                                                         <i class="fa-solid fa-star me-1 text-warning"></i> 
-                                                        <span class="text-warning me-4">17 สิงหาคม</span>
-                                                        
+                                                        <span class="text-warning me-4">17 ส.ค.</span>
                                                     </div>
                                                     <p class="card-text text-dark" id="text-truncate-2">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -309,7 +311,6 @@
                         </div>
                     </div>
                     <!-- End Activities card -->
-
 
                 </main>
                 <?php require_once("components/footer.php");?>

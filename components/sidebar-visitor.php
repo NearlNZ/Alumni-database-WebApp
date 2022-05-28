@@ -10,8 +10,8 @@
                 </a>
                 <div class="collapse" id="collapseMenu1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="blank.php"><i class="fa-solid fa-right-to-bracket me-2"></i>เข้าสู่ระบบ</a>
-                        <a class="nav-link" href="#"><i class="fa-solid fa-user-plus me-1"></i>ลงทะเบียนศิษย์เก่า</a>
+                        <a class="nav-link" href="login.php"><i class="fa-solid fa-right-to-bracket me-2"></i>เข้าสู่ระบบ</a>
+                        <a class="nav-link" href="regist.php"><i class="fa-solid fa-user-plus me-1"></i>ลงทะเบียนศิษย์เก่า</a>
                         <a class="nav-link" href="manual-test.pdf" target="_blank"><i class="fa-solid fa-book me-2"></i>คู่มือการใช้งานระบบ</a>
                     </nav>
                 </div>
