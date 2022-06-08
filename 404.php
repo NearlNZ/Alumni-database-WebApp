@@ -10,9 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Fredoka One" rel="stylesheet">
         <script src="fontawesome-6.1.1/js/all.min.js"></script>
         <!-- Include CSS / Js -->
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <link href="bootstrap/css/styles.css" rel="stylesheet" />
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="bootstrap/js/scripts.js"></script>
         <!-- Custom Style -->
         <STYLE type="text/css">
             body {

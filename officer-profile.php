@@ -38,7 +38,8 @@
             <div id="layoutSidenav_content">
                 <main class="p-2 mb-2">
                     <?php 
-                        require_once("components/page-alumniList.php");
+                        $userParamID = $_SESSION['userID'];
+                        require_once("components/page-profile.php");
                     ?>
                 </main>
 

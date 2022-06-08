@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>ข้อมูลบัญชี : Alumni Club</title>
+        <title>แก้ไขข้อมูลการทำงาน : Alumni Club</title>
         
         <!-- Include Fonts / Icons -->
         <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -25,20 +25,21 @@
 
     <body class="sb-nav-fixed">
         <!-- Topbar -->
-        <?php require_once("components/topbar-officer.php");?>
+        <?php require_once("components/topbar-alumni.php");?>
         <!-- End Topbar -->
 
         <!-- Page -->
         <div id="layoutSidenav" style="background-color: #EAEAEA;">
             <!-- Sidebar -->
-            <?php require_once("components/sidebar-officer.php");?>
+            <?php require_once("components/sidebar-alumni.php");?>
             <!-- End Sidebar -->
 
             <!-- Content -->
             <div id="layoutSidenav_content">
                 <main class="p-2 mb-2">
                     <?php 
-                        require_once("components/page-alumniList.php");
+                        $userParamID = $_SESSION['userID'];
+                        require_once("components/page-jobEdit.php");
                     ?>
                 </main>
 

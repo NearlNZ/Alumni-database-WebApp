@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>ข้อมูลบัญชี : Alumni Club</title>
+        <title>แก้ไขข้อมูลส่วนตัว : Alumni Club</title>
         
         <!-- Include Fonts / Icons -->
         <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -38,7 +38,8 @@
             <div id="layoutSidenav_content">
                 <main class="p-2 mb-2">
                     <?php 
-                        require_once("components/page-alumniList.php");
+                        $userParamID = $_SESSION['userID'];
+                        require_once("components/page-userEdit.php");
                     ?>
                 </main>
 

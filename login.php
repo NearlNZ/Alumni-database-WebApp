@@ -10,10 +10,12 @@
         <link href="https://fonts.googleapis.com/css?family=Fredoka One" rel="stylesheet">
         <script src="fontawesome-6.1.1/js/all.min.js"></script>
         <!-- Include CSS / Js -->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <link href="bootstrap/css/styles.css" rel="stylesheet" />
+        <link href="bootstrap/css/sb-admin-2.min.css" rel="stylesheet" />
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="bootstrap/js/scripts.js"></script>
+        <script src="bootstrap/js/jquery-3.6.0.min.js"></script>
+        <script src="components/scripts/sweetalert2.all.min.js"></script>
         <!-- Custom Style -->
         <STYLE type="text/css">
             body {
@@ -45,24 +47,22 @@
                                         </div>
 
                                         <!--Login form-->
-                                        <form class="user" method="POST" action="post-test.php">
+                                        <form id="loginForm" class="user" action="ajax-checkLogin.php" method="POST">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user" id="username" name="username"
+                                                <input type="text" class="form-control form-control-user" name="username"
                                                 required autofocus autocomplete="off" placeholder="Username"
                                                 value="<?php if(isset($_COOKIE['username'])) {echo $_COOKIE['username']; } ?>">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="password" name="password" 
+                                                <input type="password" class="form-control form-control-user" name="password" 
                                                 required placeholder="Password"
                                                 value="<?php if(isset($_COOKIE['password'])) {echo $_COOKIE['password']; } ?>">
                                             </div>
-                                            <!-- Login error-->
-                                            <h6 id="err-message" class="text-danger text-center">* ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง</h6>
 
-                                            <div class="form-group mb-3 ms-2">
-                                                <div class="custom-control custom-checkbox small">
-                                                    <input type="checkbox" class="custom-control-input" id="remember" name="remember" <?php if(isset($_COOKIE['userpid'])) { ?> checked <?php } ?>>
-                                                    <label class="custom-control-label" for="remember">จดจำบัญชีผู้ใช้</label>
+                                            <div class="form-group mb-4 ms-2">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input" name="remember" <?php if(isset($_COOKIE['username'])) echo "checked"; ?>>
+                                                    <label class="form-check-label small ms-1" for="remember">จดจำบัญชีผู้ใช้</label>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-user btn-block mb-2">เข้าสู่ระบบ<i class="fa-solid fa-right-to-bracket ms-2"></i></button>
@@ -70,8 +70,8 @@
                                         </form>
                                         <!--End login form-->
 
-                                        <div class="text-center mb-3">
-                                            <a class="small" href="404.php"><i class="fa-solid fa-key me-2"></i>ลืมรหัสผ่าน? รีเซ็ตรหัสผ่านปัจจุบัน</a>
+                                        <div class="text-center mt-4">
+                                            <a class="small" href="resetPassword.php"><i class="fa-solid fa-key me-2"></i>ลืมรหัสผ่าน? รีเซ็ตรหัสผ่านปัจจุบัน</a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,3 +83,62 @@
         </div>
     </body>
 </html>
+
+<script type="text/javascript">
+    $('#loginForm').submit(function(e){
+        e.preventDefault();
+        var form = $(this);
+        var actionUrl = form.attr('action');
+
+        $.ajax({
+            type:'post',
+            url:actionUrl,
+            data:form.serialize(),
+            success:function(data) {
+                if(data == "success_alumni"){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'เข้าสู่ระบบสำเร็จ',
+                        showConfirmButton: false,
+                        timer: 4000
+                    }).then((result) => {
+                        if (result.dismiss) {
+                            window.location.href="alumni-profile.php";
+                        }
+                    })
+                    
+                }
+                else if(data == "success_officer"){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'เข้าสู่ระบบสำเร็จ',
+                        showConfirmButton: false,
+                        timer: 4000
+                    }).then((result) => {
+                        if (result.dismiss) {
+                            window.location.href="officer-profile.php";
+                        }
+                    }) 
+                }
+                else if(data == "err_wrongPassword"){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'เข้าสู่ระบบล้มเหลว',
+                        text: 'รหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบรหัสผ่านอีกครั้ง',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+                }
+                else if(data == "err_noAccount"){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'เข้าสู่ระบบล้มเหลว',
+                        text: 'ไม่มีบัญชีผู้ใช้นี้ในระบบ กรุณาลงทะเบียนหรือติดต่อเจ้าหน้าที่',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+                }
+            }
+        });
+    });
+</script>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>ข้อมูลบัญชี : Alumni Club</title>
+        <title>รายชื่อศิษย์เก่า : Alumni Club</title>
         
         <!-- Include Fonts / Icons -->
         <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -15,6 +15,8 @@
         <script src="bootstrap/js/scripts.js"></script>
         <script src="bootstrap/js/jquery-3.6.0.min.js"></script>
         <script src="components/scripts/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap/DataTables/datatables.min.css"/>
+        <script type="text/javascript" src="bootstrap/DataTables/datatables.min.js"></script>
         <!-- Custom Style -->
         <STYLE type="text/css">
             body {
